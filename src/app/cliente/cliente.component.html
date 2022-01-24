@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="container-fluid">
+    <h1 class="text-center my-5">Lista de Clientes</h1>
+    <div class="row">
+      <div class="col">
+        <a class="btn btn-primary mb-3" href="cliente/add">Registrar</a>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+            <th>Fecha Nacimiento</th>
+            <th>Fecha Probable Muerte </th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let dato of listaclientes; let i = index;">
+              <td>{{dato.cliente.id}}</td>
+              <td>{{dato.cliente.nombre}}</td>
+              <td>{{dato.cliente.apellido}}</td>
+              <td>{{dato.cliente.edad}}</td>
+              <td>{{dato.cliente.fechaNacimiento}}</td>
+              <td>{{dato.fechaProbableMuerte}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <p class="text-muted">Resultados</p>
+          <p>Promedio de Edad {{result != null ? result.promedio : '0'}}</p>
+          <p>Desviacion Estandar {{result != null ? result.desviacionEstandar : '0'}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
